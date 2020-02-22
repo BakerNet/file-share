@@ -1,0 +1,11 @@
+<% include _header.ejs %>
+
+<h1>Download: <%= file.name() %></h1>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <button class="btn black-border download-file-button" data-fileurl="<%= file.fileUrl %>" data-filename="<%= file.fileName %>" data-access_token="<%= access_token %>">Download</button>
+    </div>
+</div>
+
+<% include _footer.ejs %>

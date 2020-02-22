@@ -1,0 +1,11 @@
+<% include _header.ejs %>
+
+<h1>Upload</h1>
+
+<form action="?_csrf=<%=csrfToken  %> " enctype="multipart/form-data" method="post">
+    <input type="file" class="form-control-file" name="file">
+    <input type="text" name="displayName" class="form-control" placeholder="Display Name (optional)">
+    <input type="submit" value="Upload File" class="btn btn-primary btn-block">
+</form>
+
+<% include _footer.ejs %>

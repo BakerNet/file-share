@@ -1,0 +1,33 @@
+<% include _header %>
+
+<% if (!currentUser) { %>
+    <h1>Log in to upload and share files</h1>
+<% } else { %>
+    <h1>You files: </h1>
+<% } %>
+
+<% files.forEach(function(file) { %>
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <div class="margin"><span class="margin-right"><%= file.name() %></span><button class="btn black-border download-file-button" data-fileurl="<%= file.fileUrl %>" data-filename="<%= file.fileName %>">Download</button></div>
+            <!-- <div class="margin"><span class="margin-right">Grant access:</span>
+                <select iid="grant-access-<%= file.id %>">
+                    <option>----</option>
+                    <% users.forEach(function(user) { %>
+                        <% if (user.username === currentUser.username) { %>
+                        <option value="<%= user.username %>"><%= user.username %></option>
+                        <% } %>
+                    <% }) %>
+                </select>
+            <button class="btn black-border grant-access-button" >Grant</button></div> -->
+            <div class="margin">
+                <span class="margin-right">Create sharable link:</span>
+                <button class="btn black-border share-file-button" data-fileid="<%= file.id %>">Share</button>
+                <input id="copy-on-click-<%= file.id %>" class="copy-on-click" type="text" style="display: none;" hidden>
+            </div>
+        </div>
+    </div>
+<% }) %> 
+
+<% include _footer %>
+
