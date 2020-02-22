@@ -43,3 +43,5 @@ jspm_packages
 
 # Config file with personal info
 config/config.json
+
+uploads
